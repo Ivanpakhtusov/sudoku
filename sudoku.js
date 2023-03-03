@@ -3,8 +3,42 @@
  * Возвращает игровое поле после попытки его решить.
  * Договорись со своей командой, в каком формате возвращать этот результат.
  */
+
+let boardString = '1-58-2----9--764-52--4--819-19--73-6762-83-9-----61-5---76---3-43--2-5-16--3-89--';
+
 function solve(boardString) {
+
+  const array = boardString.split('');
+
+
+  array.forEach( (el) =>{ el ==='-' ? el=Math.floor(Math.random()*9)+1 })
+  console.log(array)
+
+  let newArray =[];
+
+  for (let i = 0; i < 9; i+=1) {
+  newArray.push([array.splice(0,9)])
+  }
+
+
+
+
+
+  //return newArray
 }
+
+console.log(solve(boardString));
+
+
+
+
+
+
+
+
+
+
+
 
 /**
  * Принимает игровое поле в том формате, в котором его вернули из функции solve.
