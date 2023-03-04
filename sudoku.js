@@ -4,26 +4,44 @@
  * Договорись со своей командой, в каком формате возвращать этот результат.
  */
 function solve(boardString) {
-
+  
 }
+  
 
 /**
  * Принимает игровое поле в том формате, в котором его вернули из функции solve.
  * Возвращает булевое значение — решено это игровое поле или нет.
  */
-function isSolved(board) {
-  
-}
+ function isSolved(board) {
+
+ }
 
 /**
  * Принимает игровое поле в том формате, в котором его вернули из функции solve.
  * Возвращает строку с игровым полем для последующего вывода в консоль.
  * Подумай, как симпатичнее сформировать эту строку.
  */
-function prettyBoard(board) {
-  let form = board.map((el) => el.join('-'));
-   return form.join('\n');
-}
+  function prettyBoard(board) {
+    let prettyBoardStr = '';
+    for(let i = 0; i < board.length; i += 1) {
+      if(i % 3 === 0 && i !== 0) {
+        prettyBoardStr += '---------------\n';
+      }
+      for(let j = 0; j < board[i].length; j += 1) {
+        if(j % 3 === 0 && j !== 0) {
+          prettyBoardStr += ' | ';
+        }
+        if(board[i][j] === null || board[i][j] === undefined) {
+          prettyBoardStr += ' ';
+        } else {
+          prettyBoardStr += board[i][j] + '';
+        }
+      }
+      prettyBoardStr += '\n';
+    }
+    return prettyBoardStr;
+   }
+
 
  
 // Экспортировать функции для использования в другом файле (например, readAndSolve.js).
