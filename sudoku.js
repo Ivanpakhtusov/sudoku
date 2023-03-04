@@ -24,6 +24,7 @@ function prettyBoard(board) {
   let form = board.map((el) => el.join('-'));
    return form.join('\n');
 }
+
  
 // Экспортировать функции для использования в другом файле (например, readAndSolve.js).
 module.exports = {
